@@ -3,6 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Glowing Bouquet</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
@@ -10,61 +11,11 @@
 <link rel="stylesheet" href="./style.css">
 
 <style>
-/* ================= ENVELOPE ================= */
-.envelope {
-  position: absolute;
-  top: 150px; /* between title and flowers */
-  left: 50%;
-  transform: translateX(-50%);
-  width: 120px;
-  height: 80px;
-  z-index: 999;
-  animation: floatEnvelope 3s ease-in-out infinite;
-}
 
-/* envelope body */
-.envelope-body {
-  width: 100%;
-  height: 100%;
-  background: #ffd1ec;
-  border: 2px solid #ff69c9;
-  border-radius: 5px;
-  position: absolute;
-  bottom: 0;
-  box-shadow: 0 0 15px #ff69c9;
-}
-
-/* flap */
-.envelope-flap {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 50%;
-  background: #ffb6e6;
-  clip-path: polygon(0 0, 50% 100%, 100% 0);
-  border-bottom: 2px solid #ff69c9;
-}
-
-/* letter inside */
-.letter {
-  position: absolute;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-  font-size: 12px;
-  color: #ff1493;
-  opacity: 0.8;
-}
-
-/* animation */
-@keyframes floatEnvelope {
-  0%,100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-8px); }
-}
 /* ================= ROMANTIC TEXT (SOFT PINK MOTHER’S DAY) ================= */
 .title {
   position: absolute;
-  top: 60px; /* moved slightly down */
+  top: 1000px; /* moved slightly down */
   width: 100%;
   text-align: center;
   font-family: 'Great Vibes', cursive;
@@ -74,7 +25,6 @@
   text-shadow: 0 0 15px #ffb6e6, 0 0 30px #ff77cc;
   animation: titleGlow 3s ease-in-out infinite, floatTitle 4s ease-in-out infinite;
 }
-
 
 @keyframes titleGlow {
   0%, 100% {
@@ -125,7 +75,7 @@
 }
 
 /* ================= FLOWERS UNTOUCHED ================= */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
 
   .flowers {
     transform: scale(0.75);
@@ -134,32 +84,32 @@
   }
 
   .title {
-    font-size: 42px;
-    top: 40px;
+    font-size: 70px;
+    top: 100px;
   }
 
   .subtitle {
-    font-size: 20px;
+    font-size: 50px;
   }
 
   .night {
     height: 100vh;
     overflow: hidden;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 1000px) {
 
   .title {
-    top: 20px;          /* bring title closer to top */
-    font-size: 40px;
+    top: 50px;          /* bring title closer to top */
+    font-size: 50px;
   }
 
   .subtitle {
-    font-size: 18px;
-    margin-top: 4px;    /* reduce space between lines */
+    font-size: 48px;
+    margin-top: 0px;    /* reduce space between lines */
   }
 
   .flowers {
-    bottom: 10px;       /* lift flowers upward */
+    bottom: 190px;       /* lift flowers upward */
     transform: scale(0.78);
     transform-origin: bottom center;
   }
@@ -169,6 +119,43 @@
     overflow: hidden;
   }
 }
+}
+/* ================= MOBILE FIX (ONLY PHONE) ================= */
+@media (max-width: 10px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  /* bring title lower and tighter */
+  .title {
+    top: 100px !important;
+    font-size: 50px !important;
+    line-height: 1.1;
+  }
+
+  /* subtitle closer to title */
+  .subtitle {
+    font-size: 40px !important;
+    margin-top: 50px;
+  }
+
+ 
+
+  /* lift flowers upward (MOST IMPORTANT FIX) */
+  .flowers {
+    transform: scale(0.75);
+    transform-origin: bottom center;
+    position: absolute;
+    bottom: 10px !important;
+    width: 100%;
+  }
+
+  /* reduce huge empty vertical spacing effect */
+  .night {
+    height: 100vh;
+    overflow: hidden;
+  }
 }
 </style>
 
@@ -181,7 +168,10 @@
 
 <div class="title">
   Happy Mother's Day 
-  <div class="subtitle">Samreena Azam & Sakeena Azam</div>
+  <div class="subtitle">Samreena Azam 
+  </div>
+  <div class="subtitle"> & </div>
+  <div class="subtitle">Sakeena Azam</div>
 </div>
 <!-- 💗 HEARTS -->
 <div class="hearts">
@@ -194,12 +184,7 @@
 
 <!-- 🌙 BACKGROUND -->
 <div class="night"></div>
-<!-- 💌 ENVELOPE -->
-<div class="envelope">
-  <div class="envelope-flap"></div>
-  <div class="envelope-body"></div>
-  <div class="letter">💖 A love letter for you 💖</div>
-</div>
+
 </body>
 </html>
 
