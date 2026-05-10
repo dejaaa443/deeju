@@ -74,7 +74,28 @@
 }
 
 /* ================= FLOWERS UNTOUCHED ================= */
+@media (max-width: 600px) {
 
+  .flowers {
+    transform: scale(0.75);
+    transform-origin: bottom center;
+    bottom: 20px;
+  }
+
+  .title {
+    font-size: 42px;
+    top: 40px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .night {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
 </style>
 
 </head>
@@ -82,8 +103,12 @@
 <body class="not-loaded">
 
 <!-- 💖 TITLE -->
-<div class="title">Happy Mother's Day </div>
 
+
+<div class="title">
+  Happy Mother's Day 
+  <div class="subtitle">Samreena Azam & Sakeena Azam</div>
+</div>
 <!-- 💗 HEARTS -->
 <div class="hearts">
   <span class="heart">❤</span>
